@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{15B95EAB-00AC-481C-82F0-FAB12A095742}</ProjectGuid>
+    <Keyword>QtVS_v304</Keyword>
+    <WindowsTargetPlatformVersion Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">10.0.19041.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">10.0.19041.0</WindowsTargetPlatformVersion>
+    <QtMsBuild Condition="'$(QtMsBuild)'=='' OR !Exists('$(QtMsBuild)\qt.targets')">$(MSBuildProjectDirectory)\QtMsBuild</QtMsBuild>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt_defaults.props')">
+    <Import Project="$(QtMsBuild)\qt_defaults.props" />
+  </ImportGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="QtSettings">
+    <QtInstall>5.13.2_msvc2017_64</QtInstall>
+    <QtModules>core;gui;widgets;opengl;uitools;quickwidgets;openglextensions</QtModules>
+    <QtBuildConfig>debug</QtBuildConfig>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="QtSettings">
+    <QtInstall>5.13.2_msvc2017_64</QtInstall>
+    <QtModules>core;gui;widgets</QtModules>
+    <QtBuildConfig>release</QtBuildConfig>
+  </PropertyGroup>
+  <Target Name="QtMsBuildNotFound" BeforeTargets="CustomBuild;ClCompile" Condition="!Exists('$(QtMsBuild)\qt.targets') or !Exists('$(QtMsBuild)\qt.props')">
+    <Message Importance="High" Text="QtMsBuild: could not locate qt.targets, qt.props; project may not build correctly." />
+  </Target>
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Label="Shared" />
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(QtMsBuild)\Qt.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(QtMsBuild)\Qt.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <IncludePath>D:\code\qtvtk\QtApplication1\QtApplication1\x64\Release\uic;D:\vtk\VTK-install\include\vtk-8.2;D:\Qt\qt5.13\5.13.2\msvc2017_64\include;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\vtk\VTK-install\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <IncludePath>D:\vtk\VTK-install\include\vtk-8.2;D:\itk\itk-Install\include\ITK-5.2;D:\code\qtvtk\QtApplication1\QtApplication1\x64\Release\uic;D:\Qt\qt5.13\5.13.2\msvc2017_64\include;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\vtk\VTK-install\lib;D:\itk\itk-Install\lib;D:\Qt\qt5.13\5.13.2\msvc2017_64\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\Qt\qt5.13\5.13.2\msvc2017_64\include\QtWidgets;D:\Qt\qt5.13\5.13.2\msvc2017_64\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <CustomBuildStep>
+      <Inputs>D:\vtk\VTK-install\lib\vtkChartsCore-8.2.lib;D:\vtk\VTK-install\lib\vtkCommonColor-8.2.lib;D:\vtk\VTK-install\lib\vtkCommonComputationalGeometry-8.2.lib;D:\vtk\VTK-install\lib\vtkCommonCore-8.2.lib;D:\vtk\VTK-install\lib\vtkCommonDataModel-8.2.lib;D:\vtk\VTK-install\lib\vtkCommonExecutionModel-8.2.lib;D:\vtk\VTK-install\lib\vtkCommonMath-8.2.lib;D:\vtk\VTK-install\lib\vtkCommonMisc-8.2.lib;D:\vtk\VTK-install\lib\vtkCommonSystem-8.2.lib;D:\vtk\VTK-install\lib\vtkCommonTransforms-8.2.lib;D:\vtk\VTK-install\lib\vtkDICOMParser-8.2.lib;D:\vtk\VTK-install\lib\vtkDomainsChemistry-8.2.lib;D:\vtk\VTK-install\lib\vtkDomainsChemistryOpenGL2-8.2.lib;D:\vtk\VTK-install\lib\vtkdoubleconversion-8.2.lib;D:\vtk\VTK-install\lib\vtkexodusII-8.2.lib;D:\vtk\VTK-install\lib\vtkexpat-8.2.lib;D:\vtk\VTK-install\lib\vtkFiltersAMR-8.2.lib;D:\vtk\VTK-install\lib\vtkFiltersCore-8.2.lib;D:\vtk\VTK-install\lib\vtkFiltersExtraction-8.2.lib;D:\vtk\VTK-install\lib\vtkFiltersFlowPaths-8.2.lib;D:\vtk\VTK-install\lib\vtkFiltersGeneral-8.2.lib;D:\vtk\VTK-install\lib\vtkFiltersGeneric-8.2.lib;D:\vtk\VTK-install\lib\vtkFiltersGeometry-8.2.lib;D:\vtk\VTK-install\lib\vtkFiltersHybrid-8.2.lib;D:\vtk\VTK-install\lib\vtkFiltersHyperTree-8.2.lib;D:\vtk\VTK-install\lib\vtkFiltersImaging-8.2.lib;D:\vtk\VTK-install\lib\vtkFiltersModeling-8.2.lib;D:\vtk\VTK-install\lib\vtkFiltersParallel-8.2.lib;D:\vtk\VTK-install\lib\vtkFiltersParallelImaging-8.2.lib;D:\vtk\VTK-install\lib\vtkFiltersPoints-8.2.lib;D:\vtk\VTK-install\lib\vtkFiltersProgrammable-8.2.lib;D:\vtk\VTK-install\lib\vtkFiltersSelection-8.2.lib;D:\vtk\VTK-install\lib\vtkFiltersSMP-8.2.lib;D:\vtk\VTK-install\lib\vtkFiltersSources-8.2.lib;D:\vtk\VTK-install\lib\vtkFiltersStatistics-8.2.lib;D:\vtk\VTK-install\lib\vtkFiltersTexture-8.2.lib;D:\vtk\VTK-install\lib\vtkFiltersTopology-8.2.lib;D:\vtk\VTK-install\lib\vtkFiltersVerdict-8.2.lib;D:\vtk\VTK-install\lib\vtkfreetype-8.2.lib;D:\vtk\VTK-install\lib\vtkGeovisCore-8.2.lib;D:\vtk\VTK-install\lib\vtkgl2ps-8.2.lib;D:\vtk\VTK-install\lib\vtkglew-8.2.lib;D:\vtk\VTK-install\lib\vtkGUISupportQt-8.2.lib;D:\vtk\VTK-install\lib\vtkGUISupportQtSQL-8.2.lib;D:\vtk\VTK-install\lib\vtkhdf5-8.2.lib;D:\vtk\VTK-install\lib\vtkhdf5_hl-8.2.lib;D:\vtk\VTK-install\lib\vtkImagingColor-8.2.lib;D:\vtk\VTK-install\lib\vtkImagingCore-8.2.lib;D:\vtk\VTK-install\lib\vtkImagingFourier-8.2.lib;D:\vtk\VTK-install\lib\vtkImagingGeneral-8.2.lib;D:\vtk\VTK-install\lib\vtkImagingHybrid-8.2.lib;D:\vtk\VTK-install\lib\vtkImagingMath-8.2.lib;D:\vtk\VTK-install\lib\vtkImagingMorphological-8.2.lib;D:\vtk\VTK-install\lib\vtkImagingSources-8.2.lib;D:\vtk\VTK-install\lib\vtkImagingStatistics-8.2.lib;D:\vtk\VTK-install\lib\vtkImagingStencil-8.2.lib;D:\vtk\VTK-install\lib\vtkInfovisCore-8.2.lib;D:\vtk\VTK-install\lib\vtkInfovisLayout-8.2.lib;D:\vtk\VTK-install\lib\vtkInteractionImage-8.2.lib;D:\vtk\VTK-install\lib\vtkInteractionStyle-8.2.lib;D:\vtk\VTK-install\lib\vtkInteractionWidgets-8.2.lib;D:\vtk\VTK-install\lib\vtkIOAMR-8.2.lib;D:\vtk\VTK-install\lib\vtkIOAsynchronous-8.2.lib;D:\vtk\VTK-install\lib\vtkIOCityGML-8.2.lib;D:\vtk\VTK-install\lib\vtkIOCore-8.2.lib;D:\vtk\VTK-install\lib\vtkIOEnSight-8.2.lib;D:\vtk\VTK-install\lib\vtkIOExodus-8.2.lib;D:\vtk\VTK-install\lib\vtkIOExport-8.2.lib;D:\vtk\VTK-install\lib\vtkIOExportOpenGL2-8.2.lib;D:\vtk\VTK-install\lib\vtkIOExportPDF-8.2.lib;D:\vtk\VTK-install\lib\vtkIOGeometry-8.2.lib;D:\vtk\VTK-install\lib\vtkIOImage-8.2.lib;D:\vtk\VTK-install\lib\vtkIOImport-8.2.lib;D:\vtk\VTK-install\lib\vtkIOInfovis-8.2.lib;D:\vtk\VTK-install\lib\vtkIOLegacy-8.2.lib;D:\vtk\VTK-install\lib\vtkIOLSDyna-8.2.lib;D:\vtk\VTK-install\lib\vtkIOMINC-8.2.lib;D:\vtk\VTK-install\lib\vtkIOMovie-8.2.lib;D:\vtk\VTK-install\lib\vtkIONetCDF-8.2.lib;D:\vtk\VTK-install\lib\vtkIOParallel-8.2.lib;D:\vtk\VTK-install\lib\vtkIOParallelXML-8.2.lib;D:\vtk\VTK-install\lib\vtkIOPLY-8.2.lib;D:\vtk\VTK-install\lib\vtkIOSegY-8.2.lib;D:\vtk\VTK-install\lib\vtkIOSQL-8.2.lib;D:\vtk\VTK-install\lib\vtkIOTecplotTable-8.2.lib;D:\vtk\VTK-install\lib\vtkIOVeraOut-8.2.lib;D:\vtk\VTK-install\lib\vtkIOVideo-8.2.lib;D:\vtk\VTK-install\lib\vtkIOXML-8.2.lib;D:\vtk\VTK-install\lib\vtkIOXMLParser-8.2.lib;D:\vtk\VTK-install\lib\vtkjpeg-8.2.lib;D:\vtk\VTK-install\lib\vtkjsoncpp-8.2.lib;D:\vtk\VTK-install\lib\vtklibharu-8.2.lib;D:\vtk\VTK-install\lib\vtklibxml2-8.2.lib;D:\vtk\VTK-install\lib\vtkLocalExample-8.2.lib;D:\vtk\VTK-install\lib\vtklz4-8.2.lib;D:\vtk\VTK-install\lib\vtklzma-8.2.lib;D:\vtk\VTK-install\lib\vtkmetaio-8.2.lib;D:\vtk\VTK-install\lib\vtkNetCDF-8.2.lib;D:\vtk\VTK-install\lib\vtkogg-8.2.lib;D:\vtk\VTK-install\lib\vtkParallelCore-8.2.lib;D:\vtk\VTK-install\lib\vtkpng-8.2.lib;D:\vtk\VTK-install\lib\vtkproj-8.2.lib;D:\vtk\VTK-install\lib\vtkpugixml-8.2.lib;D:\vtk\VTK-install\lib\vtkRenderingAnnotation-8.2.lib;D:\vtk\VTK-install\lib\vtkRenderingContext2D-8.2.lib;D:\vtk\VTK-install\lib\vtkRenderingContextOpenGL2-8.2.lib;D:\vtk\VTK-install\lib\vtkRenderingCore-8.2.lib;D:\vtk\VTK-install\lib\vtkRenderingFreeType-8.2.lib;D:\vtk\VTK-install\lib\vtkRenderingGL2PSOpenGL2-8.2.lib;D:\vtk\VTK-install\lib\vtkRenderingImage-8.2.lib;D:\vtk\VTK-install\lib\vtkRenderingLabel-8.2.lib;D:\vtk\VTK-install\lib\vtkRenderingLOD-8.2.lib;D:\vtk\VTK-install\lib\vtkRenderingOpenGL2-8.2.lib;D:\vtk\VTK-install\lib\vtkRenderingQt-8.2.lib;D:\vtk\VTK-install\lib\vtkRenderingVolume-8.2.lib;D:\vtk\VTK-install\lib\vtkRenderingVolumeOpenGL2-8.2.lib;D:\vtk\VTK-install\lib\vtksqlite-8.2.lib;D:\vtk\VTK-install\lib\vtksys-8.2.lib;D:\vtk\VTK-install\lib\vtktheora-8.2.lib;D:\vtk\VTK-install\lib\vtktiff-8.2.lib;D:\vtk\VTK-install\lib\vtkverdict-8.2.lib;D:\vtk\VTK-install\lib\vtkViewsContext2D-8.2.lib;D:\vtk\VTK-install\lib\vtkViewsCore-8.2.lib;D:\vtk\VTK-install\lib\vtkViewsInfovis-8.2.lib;D:\vtk\VTK-install\lib\vtkViewsQt-8.2.lib;D:\vtk\VTK-install\lib\vtkzlib-8.2.lib;D:\Qt\qt5.13\5.13.2\msvc2017_64\lib\Qt5Core.lib;D:\Qt\qt5.13\5.13.2\msvc2017_64\lib\Qt5Gui.lib;D:\Qt\qt5.13\5.13.2\msvc2017_64\lib\Qt5Widgets.lib;%(Inputs)</Inputs>
+    </CustomBuildStep>
+    <Link>
+      <AdditionalDependencies>D:\vtk\VTK-install\lib\vtkChartsCore-8.2.lib;D:\vtk\VTK-install\lib\vtkCommonColor-8.2.lib;D:\vtk\VTK-install\lib\vtkCommonComputationalGeometry-8.2.lib;D:\vtk\VTK-install\lib\vtkCommonCore-8.2.lib;D:\vtk\VTK-install\lib\vtkCommonDataModel-8.2.lib;D:\vtk\VTK-install\lib\vtkCommonExecutionModel-8.2.lib;D:\vtk\VTK-install\lib\vtkCommonMath-8.2.lib;D:\vtk\VTK-install\lib\vtkCommonMisc-8.2.lib;D:\vtk\VTK-install\lib\vtkCommonSystem-8.2.lib;D:\vtk\VTK-install\lib\vtkCommonTransforms-8.2.lib;D:\vtk\VTK-install\lib\vtkDICOMParser-8.2.lib;D:\vtk\VTK-install\lib\vtkDomainsChemistry-8.2.lib;D:\vtk\VTK-install\lib\vtkDomainsChemistryOpenGL2-8.2.lib;D:\vtk\VTK-install\lib\vtkdoubleconversion-8.2.lib;D:\vtk\VTK-install\lib\vtkexodusII-8.2.lib;D:\vtk\VTK-install\lib\vtkexpat-8.2.lib;D:\vtk\VTK-install\lib\vtkFiltersAMR-8.2.lib;D:\vtk\VTK-install\lib\vtkFiltersCore-8.2.lib;D:\vtk\VTK-install\lib\vtkFiltersExtraction-8.2.lib;D:\vtk\VTK-install\lib\vtkFiltersFlowPaths-8.2.lib;D:\vtk\VTK-install\lib\vtkFiltersGeneral-8.2.lib;D:\vtk\VTK-install\lib\vtkFiltersGeneric-8.2.lib;D:\vtk\VTK-install\lib\vtkFiltersGeometry-8.2.lib;D:\vtk\VTK-install\lib\vtkFiltersHybrid-8.2.lib;D:\vtk\VTK-install\lib\vtkFiltersHyperTree-8.2.lib;D:\vtk\VTK-install\lib\vtkFiltersImaging-8.2.lib;D:\vtk\VTK-install\lib\vtkFiltersModeling-8.2.lib;D:\vtk\VTK-install\lib\vtkFiltersParallel-8.2.lib;D:\vtk\VTK-install\lib\vtkFiltersParallelImaging-8.2.lib;D:\vtk\VTK-install\lib\vtkFiltersPoints-8.2.lib;D:\vtk\VTK-install\lib\vtkFiltersProgrammable-8.2.lib;D:\vtk\VTK-install\lib\vtkFiltersSelection-8.2.lib;D:\vtk\VTK-install\lib\vtkFiltersSMP-8.2.lib;D:\vtk\VTK-install\lib\vtkFiltersSources-8.2.lib;D:\vtk\VTK-install\lib\vtkFiltersStatistics-8.2.lib;D:\vtk\VTK-install\lib\vtkFiltersTexture-8.2.lib;D:\vtk\VTK-install\lib\vtkFiltersTopology-8.2.lib;D:\vtk\VTK-install\lib\vtkFiltersVerdict-8.2.lib;D:\vtk\VTK-install\lib\vtkfreetype-8.2.lib;D:\vtk\VTK-install\lib\vtkGeovisCore-8.2.lib;D:\vtk\VTK-install\lib\vtkgl2ps-8.2.lib;D:\vtk\VTK-install\lib\vtkglew-8.2.lib;D:\vtk\VTK-install\lib\vtkGUISupportQt-8.2.lib;D:\vtk\VTK-install\lib\vtkGUISupportQtSQL-8.2.lib;D:\vtk\VTK-install\lib\vtkhdf5-8.2.lib;D:\vtk\VTK-install\lib\vtkhdf5_hl-8.2.lib;D:\vtk\VTK-install\lib\vtkImagingColor-8.2.lib;D:\vtk\VTK-install\lib\vtkImagingCore-8.2.lib;D:\vtk\VTK-install\lib\vtkImagingFourier-8.2.lib;D:\vtk\VTK-install\lib\vtkImagingGeneral-8.2.lib;D:\vtk\VTK-install\lib\vtkImagingHybrid-8.2.lib;D:\vtk\VTK-install\lib\vtkImagingMath-8.2.lib;D:\vtk\VTK-install\lib\vtkImagingMorphological-8.2.lib;D:\vtk\VTK-install\lib\vtkImagingSources-8.2.lib;D:\vtk\VTK-install\lib\vtkImagingStatistics-8.2.lib;D:\vtk\VTK-install\lib\vtkImagingStencil-8.2.lib;D:\vtk\VTK-install\lib\vtkInfovisCore-8.2.lib;D:\vtk\VTK-install\lib\vtkInfovisLayout-8.2.lib;D:\vtk\VTK-install\lib\vtkInteractionImage-8.2.lib;D:\vtk\VTK-install\lib\vtkInteractionStyle-8.2.lib;D:\vtk\VTK-install\lib\vtkInteractionWidgets-8.2.lib;D:\vtk\VTK-install\lib\vtkIOAMR-8.2.lib;D:\vtk\VTK-install\lib\vtkIOAsynchronous-8.2.lib;D:\vtk\VTK-install\lib\vtkIOCityGML-8.2.lib;D:\vtk\VTK-install\lib\vtkIOCore-8.2.lib;D:\vtk\VTK-install\lib\vtkIOEnSight-8.2.lib;D:\vtk\VTK-install\lib\vtkIOExodus-8.2.lib;D:\vtk\VTK-install\lib\vtkIOExport-8.2.lib;D:\vtk\VTK-install\lib\vtkIOExportOpenGL2-8.2.lib;D:\vtk\VTK-install\lib\vtkIOExportPDF-8.2.lib;D:\vtk\VTK-install\lib\vtkIOGeometry-8.2.lib;D:\vtk\VTK-install\lib\vtkIOImage-8.2.lib;D:\vtk\VTK-install\lib\vtkIOImport-8.2.lib;D:\vtk\VTK-install\lib\vtkIOInfovis-8.2.lib;D:\vtk\VTK-install\lib\vtkIOLegacy-8.2.lib;D:\vtk\VTK-install\lib\vtkIOLSDyna-8.2.lib;D:\vtk\VTK-install\lib\vtkIOMINC-8.2.lib;D:\vtk\VTK-install\lib\vtkIOMovie-8.2.lib;D:\vtk\VTK-install\lib\vtkIONetCDF-8.2.lib;D:\vtk\VTK-install\lib\vtkIOParallel-8.2.lib;D:\vtk\VTK-install\lib\vtkIOParallelXML-8.2.lib;D:\vtk\VTK-install\lib\vtkIOPLY-8.2.lib;D:\vtk\VTK-install\lib\vtkIOSegY-8.2.lib;D:\vtk\VTK-install\lib\vtkIOSQL-8.2.lib;D:\vtk\VTK-install\lib\vtkIOTecplotTable-8.2.lib;D:\vtk\VTK-install\lib\vtkIOVeraOut-8.2.lib;D:\vtk\VTK-install\lib\vtkIOVideo-8.2.lib;D:\vtk\VTK-install\lib\vtkIOXML-8.2.lib;D:\vtk\VTK-install\lib\vtkIOXMLParser-8.2.lib;D:\vtk\VTK-install\lib\vtkjpeg-8.2.lib;D:\vtk\VTK-install\lib\vtkjsoncpp-8.2.lib;D:\vtk\VTK-install\lib\vtklibharu-8.2.lib;D:\vtk\VTK-install\lib\vtklibxml2-8.2.lib;D:\vtk\VTK-install\lib\vtkLocalExample-8.2.lib;D:\vtk\VTK-install\lib\vtklz4-8.2.lib;D:\vtk\VTK-install\lib\vtklzma-8.2.lib;D:\vtk\VTK-install\lib\vtkmetaio-8.2.lib;D:\vtk\VTK-install\lib\vtkNetCDF-8.2.lib;D:\vtk\VTK-install\lib\vtkogg-8.2.lib;D:\vtk\VTK-install\lib\vtkParallelCore-8.2.lib;D:\vtk\VTK-install\lib\vtkpng-8.2.lib;D:\vtk\VTK-install\lib\vtkproj-8.2.lib;D:\vtk\VTK-install\lib\vtkpugixml-8.2.lib;D:\vtk\VTK-install\lib\vtkRenderingAnnotation-8.2.lib;D:\vtk\VTK-install\lib\vtkRenderingContext2D-8.2.lib;D:\vtk\VTK-install\lib\vtkRenderingContextOpenGL2-8.2.lib;D:\vtk\VTK-install\lib\vtkRenderingCore-8.2.lib;D:\vtk\VTK-install\lib\vtkRenderingFreeType-8.2.lib;D:\vtk\VTK-install\lib\vtkRenderingGL2PSOpenGL2-8.2.lib;D:\vtk\VTK-install\lib\vtkRenderingImage-8.2.lib;D:\vtk\VTK-install\lib\vtkRenderingLabel-8.2.lib;D:\vtk\VTK-install\lib\vtkRenderingLOD-8.2.lib;D:\vtk\VTK-install\lib\vtkRenderingOpenGL2-8.2.lib;D:\vtk\VTK-install\lib\vtkRenderingQt-8.2.lib;D:\vtk\VTK-install\lib\vtkRenderingVolume-8.2.lib;D:\vtk\VTK-install\lib\vtkRenderingVolumeOpenGL2-8.2.lib;D:\vtk\VTK-install\lib\vtksqlite-8.2.lib;D:\vtk\VTK-install\lib\vtksys-8.2.lib;D:\vtk\VTK-install\lib\vtktheora-8.2.lib;D:\vtk\VTK-install\lib\vtktiff-8.2.lib;D:\vtk\VTK-install\lib\vtkverdict-8.2.lib;D:\vtk\VTK-install\lib\vtkViewsContext2D-8.2.lib;D:\vtk\VTK-install\lib\vtkViewsCore-8.2.lib;D:\vtk\VTK-install\lib\vtkViewsInfovis-8.2.lib;D:\vtk\VTK-install\lib\vtkViewsQt-8.2.lib;D:\vtk\VTK-install\lib\vtkzlib-8.2.lib;D:\Qt\qt5.13\5.13.2\msvc2017_64\lib\Qt5Core.lib;D:\Qt\qt5.13\5.13.2\msvc2017_64\lib\Qt5Gui.lib;D:\Qt\qt5.13\5.13.2\msvc2017_64\lib\Qt5Widgets.lib;D:\itk\itk-Install\lib\*.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
+    <ClCompile>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="Configuration">
+    <ClCompile>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <DebugInformationFormat>None</DebugInformationFormat>
+      <Optimization>MaxSpeed</Optimization>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="fourpanel.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Mainwindow.cpp" />
+    <ClCompile Include="QtWidgetsClass.cpp" />
+    <ClCompile Include="VTKReadJpg_InQT_Test.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtRcc Include="HelloWorld.qrc" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="DialogButtonRight.ui" />
+    <QtUic Include="fourpanel.ui" />
+    <QtUic Include="Mainwindow.ui" />
+    <QtUic Include="QtWidgetsClass.ui" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="VTKReadJpg_InQT_Test.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="fourpanel.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="Mainwindow.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="QtWidgetsClass.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="segment.h" />
+    <ClInclude Include="showImage.h" />
+    <ClInclude Include="volumnRender.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Resource.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="C:\Users\86158\Downloads\zoomin.png" />
+    <Image Include="C:\Users\86158\Downloads\zoomout.png" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
+    <Import Project="$(QtMsBuild)\qt.targets" />
+  </ImportGroup>
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

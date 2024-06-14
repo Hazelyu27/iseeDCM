@@ -1,0 +1,6 @@
+﻿  QtWidgetsClass.cpp
+D:\itk\itk-Install\include\ITK-5.2\itkRecursiveGaussianImageFilter.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+D:\itk\itk-Install\include\ITK-5.2\itkRecursiveSeparableImageFilter.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+D:\itk\itk-Install\include\ITK-5.2\itkRecursiveSeparableImageFilter.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+D:\itk\itk-Install\include\ITK-5.2\itkRecursiveGaussianImageFilter.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  QtApplication1.vcxproj -> D:\code\qtvtk\QtApplication1\x64\Release\QtApplication1.exe

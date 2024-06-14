@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/new/prefix1">
+        <file>C:/Users/86158/Downloads/zoomout.png</file>
+        <file>C:/Users/86158/Downloads/zoomin.png</file>
+    </qresource>
+</RCC>
